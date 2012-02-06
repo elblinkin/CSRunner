@@ -11,7 +11,7 @@ class Runner {
     private $filters;
     
     function __construct(
-        $phpcs;
+        $phpcs,
         Scm $scm,
         array $filters
     ) {
