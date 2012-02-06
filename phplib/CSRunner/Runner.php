@@ -15,7 +15,7 @@ class Runner {
         Scm $scm,
         array $filters
     ) {
-        $this->phpcs;
+        $this->phpcs = $phpcs;
         $this->scm = $scm;
         $this->filters = $filters;
     }
