@@ -31,7 +31,7 @@ class Blacklist implements Filter {
             '*' => '.*',
         );
         foreach ($this->blacklist as $pattern) {
-            $ignore_patterns[] strtr($pattern, $replacements);
+            $ignore_patterns[] = strtr($pattern, $replacements);
         }
         return $ignore_patterns;
     }
