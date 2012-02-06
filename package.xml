@@ -27,20 +27,18 @@
  <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
  <notes>-</notes>
  <contents>
-   <dir name="/" baseinstalldir="CSRunner">
-    <dir name="CSRunner">
-     <file name="Autoload.php" role="php"/>
-     <file name="Filter.php" role="php"/>
-     <dir name="Filter">
-      <file name="Blacklist.php" role="php"/>
-     </dir>
-     <file name="Runner.php" role="php"/>
-     <dir name="Scm">
-      <file name="Git.php" role="php"/>
-     </dir>
-     <file name="Scm.php" role="php"/>
-    </dir>
+  <dir name="CSRunner" baseinstalldir="CSRunner">
+   <file name="Autoload.php" role="php"/>
+   <file name="Filter.php" role="php"/>
+   <dir name="Filter">
+    <file name="Blacklist.php" role="php"/>
    </dir>
+   <file name="Runner.php" role="php"/>
+   <dir name="Scm">
+    <file name="Git.php" role="php"/>
+   </dir>
+   <file name="Scm.php" role="php"/>
+  </dir>
  </contents>
  <dependencies>
   <required>
