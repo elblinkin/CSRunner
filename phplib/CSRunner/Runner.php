@@ -26,6 +26,7 @@ class Runner {
         foreach ($this->filters as $filter) {
             $files = $filter->filter($changed_files);
         }
-        system("{$this->phpcs} {$files}");
+        $names = implode(' ', $files);
+        system("{$this->phpcs} {$names}");
     }
 }
