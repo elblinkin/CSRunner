@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="CSRunner" default="phpab">
+ <target name="phpab" description="Generate autoloader script">
+  <exec executable="phpab">
+   <arg value="--output" />
+   <arg path="CSRunner/Autoload.php" />
+   <arg path="CSRunner" />
+  </exec>
+ </target>
+</project>
