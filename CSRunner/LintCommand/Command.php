@@ -26,7 +26,7 @@ class Command implements \CSRunner\Command {
         $files = $this->finder->find($files_and_directories);
         $results = array();
         foreach ($files as $file) {
-            $results[] = $this->linter->lint($file, $result_file);
+            $results[] = $this->linter->lint($file);
         }
         if (isset($this->reporter)) {
             $this->reporter->report($results);

@@ -1,5 +1,6 @@
 <?php
 
+namespace CSRunner;
 
 interface Command {
 

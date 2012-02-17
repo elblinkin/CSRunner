@@ -15,11 +15,11 @@ class Linter {
     }
 
     public function lint($file) {
+        print "+ {$this->php_lint_command} {$file}\n";
         exec($this->php_lint_command . ' ' . $file, $output, $return_code);
         $result = array();
         $result['name'] = $file;
         $result['errors'] = array();
-        print "$file\n";
         foreach ($output as $line) {
             if (preg_match(';^Parse error: (.*) on line (\d+)$;', $line, $matches) !== 0) {
                 $error = array();

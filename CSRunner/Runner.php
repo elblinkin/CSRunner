@@ -9,7 +9,6 @@ class Runner {
     private $commands;
     private $scm;
     private $filters;
-    private $commands;
     
     function __construct(
         array $commands,
@@ -19,7 +18,6 @@ class Runner {
         $this->commands = $commands;
         $this->scm = $scm;
         $this->filters = $filters;
-        $this->commands = $commands;
     }
     
     function run(array $directories) {
