@@ -6,18 +6,20 @@ use CSRunner\Scm as Scm;
 
 class Runner {
     
-    private $phpcs;
+    private $commands;
     private $scm;
     private $filters;
+    private $commands;
     
     function __construct(
-        $phpcs,
+        array $commands,
         Scm $scm,
         array $filters
     ) {
-        $this->phpcs = $phpcs;
+        $this->commands = $commands;
         $this->scm = $scm;
         $this->filters = $filters;
+        $this->commands = $commands;
     }
     
     function run(array $directories) {
@@ -26,7 +28,8 @@ class Runner {
         foreach ($this->filters as $filter) {
             $files = $filter->filter($changed_files);
         }
-        $names = implode(' ', $files);
-        system("{$this->phpcs} {$names}");
+        foreach ($this->commands as $command) {
+            $command->run($files);
+        }
     }
 }

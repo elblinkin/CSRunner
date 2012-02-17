@@ -7,8 +7,14 @@ spl_autoload_register(
         static $classes = null;
         if ($classes === null) {
             $classes = array(
+                'csrunner\\codesniffercommand\\command' => '/CodeSnifferCommand/Command.php',
+                'csrunner\\command' => '/Command.php',
+                'csrunner\\filefinder' => '/FileFinder.php',
                 'csrunner\\filter' => '/Filter.php',
                 'csrunner\\filter\\blacklist' => '/Filter/Blacklist.php',
+                'csrunner\\lintcommand\\command' => '/LintCommand/Command.php',
+                'csrunner\\lintcommand\\linter' => '/LintCommand/Linter.php',
+                'csrunner\\lintcommand\\reporter' => '/LintCommand/Reporter.php',
                 'csrunner\\runner' => '/Runner.php',
                 'csrunner\\scm' => '/Scm.php',
                 'csrunner\\scm\\git' => '/Scm/Git.php'
