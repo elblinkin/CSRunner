@@ -15,10 +15,10 @@
   <email>github@elblinkin.info</email>
   <active>yes</active>
  </lead>
- <date>2012-02-06</date>
+ <date>2012-02-17</date>
  <version>
-  <release>0.1.0</release>
-  <api>0.1.0</api>
+  <release>0.2.0</release>
+  <api>0.2.0</api>
  </version>
  <stability>
   <release>beta</release>
@@ -30,9 +30,19 @@
   <dir name="/" baseinstalldir="/">
    <dir name="CSRunner">
     <file name="Autoload.php" role="php"/>
+    <dir name="CodeSnifferCommand">
+     <file name="Command.php" role="php"/>
+    </dir>
+    <file name="Command.php" role="php"/>
+    <file name="FileFinder.php" role="php"/>
     <file name="Filter.php" role="php"/>
     <dir name="Filter">
      <file name="Blacklist.php" role="php"/>
+    </dir>
+    <dir name="LintCommand">
+     <file name="Command.php" role="php"/>
+     <file name="Linter.php" role="php"/>
+     <file name="Reporter.php" role="php"/>
     </dir>
     <file name="Runner.php" role="php"/>
     <dir name="Scm">
