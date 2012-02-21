@@ -10,11 +10,30 @@ Example
     <?php
     require_once 'CSRunner/Autoload.php';
     
+    
+    use CSRunner\CodeSnifferCommand\Command as CodeSnifferCommand;
     use CSRunner\Filter\Blacklist;
+    use CSRunner\Finder\PassThrough as PassThroughFinder
+    use CSRunner\LintCommand\Command as LintCommand;
+    use CSRunner\LintCommand\Linter;
+    use CSRunner\LintCommand\Reporter as LintReporter;
     use CSRunner\Runner;
     use CSRunner\Scm\Git as Scm;
     
-    $phpcs = 'phpcs -p --standard=pear --report=checkstyle --report-file=codesniffer.xml -d memory_limit=-1';
+    $finder = new PassThroughFinder();
+    
+    $phpcs = 'phpcs -p --standard=pear --report=checkstyle --report-file=codesniffer.xml -d memory_limit=-1
+    
+    $phpcs_command = new CodeSnifferCommand($phpcs, $finder);
+    
+    $writer = new XmlWriter;
+    $writer->openURI('lint.xml');
+    $reporter = new LintReporter($writer);
+    $lint_command = new LintCommand(
+        $finder,
+        'php -l -c /etc/php.ini',
+        $reporter
+    );
     
     $scm = new Scm(
         'origin',
@@ -37,7 +56,10 @@ Example
     );
     
     $runner = new Runner(
-        $phpcs,
+        array(
+            $lint_command,
+            $phpcs
+        ),
         $scm,
         $filters
     );
