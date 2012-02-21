@@ -2,7 +2,7 @@
 
 namespace CSRunner\CodeSnifferCommand;
 
-use CSRunner\FileFinder;
+use CSRunner\Finder;
 
 class Command implements \CSRunner\Command {
 
@@ -11,7 +11,7 @@ class Command implements \CSRunner\Command {
 
     public function __construct(
         $phpcs,
-        FileFinder $finder
+        Finder $finder
     ) {
         $this->phpcs = $phpcs;
         $this->finder = $finder;

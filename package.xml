@@ -15,10 +15,10 @@
   <email>github@elblinkin.info</email>
   <active>yes</active>
  </lead>
- <date>2012-02-17</date>
+ <date>2012-02-21</date>
  <version>
-  <release>0.2.0</release>
-  <api>0.2.0</api>
+  <release>0.2.1</release>
+  <api>0.2.1</api>
  </version>
  <stability>
   <release>beta</release>
@@ -34,7 +34,6 @@
      <file name="Command.php" role="php"/>
     </dir>
     <file name="Command.php" role="php"/>
-    <file name="FileFinder.php" role="php"/>
     <file name="Filter.php" role="php"/>
     <dir name="Filter">
      <file name="Blacklist.php" role="php"/>
@@ -43,6 +42,11 @@
      <file name="Command.php" role="php"/>
      <file name="Linter.php" role="php"/>
      <file name="Reporter.php" role="php"/>
+    </dir>
+    <file name="Finder.php" role="php"/>
+    <dir name="Finder">
+     <file name="File.php" role="php"/>
+     <file name="PassThrough.php" role="php"/>
     </dir>
     <file name="Runner.php" role="php"/>
     <dir name="Scm">

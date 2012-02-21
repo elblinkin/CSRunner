@@ -1,8 +1,10 @@
 <?php
 
-namespace CSRunner;
+namespace CSRunner\Finder;
 
-class FileFinder {
+use CSRunner\Finder;
+
+class File extends Finder {
 
     public function find(array $files_and_directories) {
         foreach ($files_and_directories as $file_or_directory) {

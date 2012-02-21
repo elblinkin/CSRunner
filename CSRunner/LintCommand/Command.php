@@ -2,7 +2,7 @@
 
 namespace CSRunner\LintCommand;
 
-use CSRunner\FileFinder;
+use CSRunner\Finder;
 use XmlWriter;
 
 class Command implements \CSRunner\Command {
@@ -12,7 +12,7 @@ class Command implements \CSRunner\Command {
     private $reporter;
 
     public function __construct(
-        FileFinder $finder,
+        Finder $finder,
         Linter $linter,
         Reporter $reporter = null
     ) {
